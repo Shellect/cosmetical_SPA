@@ -1,0 +1,21 @@
+@import "bootstrap/scss/bootstrap.scss";
+$primary: rgb(148, 122, 255);
+$secondary: #fff;
+$success: #fff;
+
+.bg-body-primary {
+    background-color: $primary;
+}
+
+.nav-link {
+    color: $secondary;
+}
+.btn-outline-success {
+    border-color: $success;
+    color:$secondary ;
+}
+.btn-outline-success:hover {
+    background-color:$success ;
+    color: $primary;
+    border-color: $primary;
+}       

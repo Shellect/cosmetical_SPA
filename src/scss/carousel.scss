@@ -1,0 +1,85 @@
+@use 'sass:math';
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.u-media-wrapper {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 0;
+  padding-bottom: percentage(math.div(9, 16));
+
+}
+
+.c-gradient-overlay {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+                  circle at 49% 50%,
+                  rgba(2, 21, 25, 0.3),
+                  rgba(2, 21, 25, 0.6)
+  );
+}
+
+.c-mouse-vertical-carousel {
+  position: relative;
+  overflow: hidden;
+
+  &__list {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__list-item {
+    padding-bottom: 25px;
+    padding-top: 25px;
+    padding-left: percentage(math.div(13, 24));
+
+    font-family: Arial, sans-serif;
+    font-size: 37px;
+    line-height: 35px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+  }
+}
+
+.is-visible {
+  opacity: 1;
+}
